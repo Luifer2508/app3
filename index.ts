@@ -4,23 +4,8 @@ import Server from "./classes/server";
 import defaultRoutes from "./routes/default.routes";
 import gameRoutes from "./routes/videojuegos.routes";
 import cors from "cors";
-import express from 'express'
 
-const app = express();
 const server = new Server();
-
-app.use(express.json());
-
-
-server.app.use(bodyParser.json());
-server.app.use(bodyParser.urlencoded({extended:true}))
-
-server.app.use('/', defaultRoutes);
-server.app.use('/videojuegos', gameRoutes);
-
-
-
-
 
 
 server.app.use(function (req, res, next) {
@@ -37,6 +22,19 @@ server.app.use(function (req, res, next) {
 
     next();
 });
+
+server.app.use(bodyParser.json());
+server.app.use(bodyParser.urlencoded({extended:true}))
+
+server.app.use('/', defaultRoutes);
+server.app.use('/videojuegos', gameRoutes);
+
+
+
+
+
+
+
 
 
 mongoose.connect('mongodb+srv://usr_videojuegos:videojuegos2022@cluster0.bseihec.mongodb.net/videojuegosDb',(error)=>{
