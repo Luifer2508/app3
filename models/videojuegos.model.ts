@@ -1,4 +1,4 @@
-import { Document, model, Schema } from "mongoose";
+import {  Document, model, Schema } from "mongoose";
 
 const gameSchema = new Schema({
     nombre: {
@@ -27,5 +27,6 @@ interface Igame extends Document{
     genero:string;
     imagen:string;
 }
+
 
 export const Games = model<Igame>('Videojuego', gameSchema)

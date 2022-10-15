@@ -11,6 +11,7 @@ gameRoutes.get('/', async (req: Request, res: Response)=>{
         ok: true,
         games
     })
+ 
 });
 
 gameRoutes.get('/paging', async (req: Request, res: Response)=>{
