@@ -18,11 +18,7 @@ server.app.use(bodyParser.urlencoded({extended:true}))
 server.app.use('/', defaultRoutes);
 server.app.use('/videojuegos', gameRoutes);
 
-app.use(cors({
-    origin: 'https://backend-videojuegos.herokuapp.com/videojuegos',
-    credentials: true,
-    methods: ['GET', 'POST', 'OPTIONS','PUT', 'DELETE']
-}));
+
 
 
 
